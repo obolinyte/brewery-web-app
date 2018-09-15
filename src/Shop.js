@@ -17,6 +17,7 @@ class Shop extends Component {
             currentPage: 1,
             totalPages: Math.ceil(data.beers.length / 12),
             filters:[],
+            searchInput:"",
         }
         this.onNextClick = this.onNextClick.bind(this);
         this.onPrevClick = this.onPrevClick.bind(this);
@@ -50,11 +51,22 @@ class Shop extends Component {
             }
             return false;
         });
-        
+        let filterList=this.state.filters;
+        if (filterList.length > 0) {
+            filteredProductsList = filteredProductsList.filter((product)=> {
+               let result= filterList.indexOf(product.style.toLowerCase());
+               if (result > -1) {
+                   return true;
+               }
+               return false;
+            })
+        }
+
         this.setState({
             currentPage: 1,
             filteredBeerList: filteredProductsList,
-            totalPages: Math.ceil(filteredProductsList.length / this.state.pageSize)
+            totalPages: Math.ceil(filteredProductsList.length / this.state.pageSize),
+            searchInput:lowercasedSearchTerm,
         })
     }
 
@@ -66,8 +78,31 @@ class Shop extends Component {
         } else {
             activeFilters.push(filter);
         }
-        console.log({filters:activeFilters})
-        this.setState({filters:activeFilters})
+        let lowercasedSearchTerm = this.state.searchInput;
+        let filteredProductsList = this.state.beerList.filter((product) => {
+            let lowercasedProductName = product.name.toLowerCase();
+            let result = lowercasedProductName.indexOf(lowercasedSearchTerm);
+            if (result > -1) {
+                return true;
+            }
+            return false;
+        });
+        if (activeFilters.length > 0) {
+            filteredProductsList = filteredProductsList.filter((product)=> {
+               let result= activeFilters.indexOf(product.style.toLowerCase());
+               if (result > -1) {
+                   return true;
+               }
+               return false;
+            })
+        }
+
+        this.setState({
+            filters:activeFilters,
+            currentPage: 1,
+            filteredBeerList: filteredProductsList,
+            totalPages: Math.ceil(filteredProductsList.length / this.state.pageSize),
+        })
     }
 
     render() {
