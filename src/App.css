@@ -177,12 +177,10 @@ main {
     width: 50%;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    background-color: #ededda;
     padding-left: 30px;
     font-family: 'Muli', sans-serif;
     font-size: 30px;
-  background-color: white;
-
+    background-color: white;
 }
 
 .search-input::placeholder {
@@ -193,7 +191,7 @@ main {
 }
 
 .search-submit {
-  background-color: white;
+    background-color: white;
     color: #0f0d0f;
     border: none;
     border-top-right-radius: 30px;
@@ -217,158 +215,147 @@ main {
 }
 
 .beer-filter-container>li:hover {
-  color:#6d7465;
-}
-.beer-filter-active {
-font-weight: 700;
+    color: #6d7465;
 }
 
-/* .beer-filter-container>hr {
-    border: none;
-    border-left: 1px solid rgb(221, 192, 2);
-    height: 22px;
-    width: 1px;
-    margin: 0 20px 0 0;
-} */
+.beer-filter-active {
+    font-weight: 700;
+}
 
 .products-list-container {
-margin-top: 80px;
+    margin-top: 80px;
 }
 
 .products-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .products-list:after {
-  content: "";
-  width:30%;
+    content: "";
+    width: 30%;
 }
 
 .product-card-container {
-  text-decoration: none;
-  border: 3px solid #FFDD00;
-  background-color: rgb(255, 255, 255);
-  padding: 40px 10px;
-  width: 30%;
-  margin:0 40px 40px 0;
+    text-decoration: none;
+    border: 3px solid #FFDD00;
+    background-color: rgb(255, 255, 255);
+    padding: 40px 10px;
+    width: 30%;
+    margin: 0 40px 40px 0;
 }
 
-
-
 .product-card-container:nth-child(3n) {
-  margin-right:0;
+    margin-right: 0;
 }
 
 .product-card {
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-
 .product-img {
-  width: 50%;
+    width: 50%;
 }
 
 .product-card-footer {
-  width: 90%;
-  color: #6d7465;
-  display:flex;
-  flex-direction: column;
-  /* align-items: center; */
-  /* text-align: center; */
+    width: 90%;
+    color: #6d7465;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* text-align: center; */
 }
 
 .product-title {
-  width: 100%;
-  margin: 50px 0 20px 0;
-  font-weight: 700;
-  font-size: 18px;
+    width: 100%;
+    margin: 50px 0 20px 0;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .alc-price-container {
-  display: flex;
-  flex-direction: row;  
-  /* justify-content: space-between; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
 }
 
 .product-price {
-  margin-left: auto;
-font-weight: 700;
-/* font-style:italic; */
+    margin-left: auto;
+    font-weight: 700;
+    /* font-style:italic; */
 }
 
 .alc-price-container>.icon-shopping-cart {
-  font-size: 20px;
-  margin-left: 10px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .paging-container {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.paging-container> a{
- text-decoration: none;
- color: #322a31;
- font-size: 20px;
+.paging-container>a {
+    text-decoration: none;
+    color: #322a31;
+    font-size: 20px;
 }
 
 .paging-container>a:hover {
-  color:#6d7465;
+    color: #6d7465;
 }
 
 footer {
-  width:100%;
-  background-color: #322a31;
-  margin-top: 40px;
-  padding: 40px 0 10px 0;
+    width: 100%;
+    background-color: #322a31;
+    margin-top: 40px;
+    padding: 40px 0 10px 0;
 }
 
 .footer-container {
-  width: 80%;
-  color: #ededda;
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  justify-content: space-between;
+    width: 80%;
+    color: #ededda;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .follow-us-container {
-  flex: 1 1 0;
-  margin-right: 30px;
+    flex: 1 1 0;
+    margin-right: 30px;
 }
 
-.subscribe-container{
-  flex: 3 1 0;
-  margin-right: 30px;
+.subscribe-container {
+    flex: 3 1 0;
+    margin-right: 30px;
 }
 
 .contact-us-container {
-  flex: 1 1 0;
+    flex: 1 1 0;
 }
 
 .follow-us-container>.nav-list {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .follow-us-container>.nav-list>li {
- margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .subscribe-form {
-  display: flex;
+    display: flex;
 }
 
 .subscribe-input {
-  outline: none;
+    outline: none;
     line-height: 40px;
     border: none;
     width: 50%;
@@ -376,45 +363,166 @@ footer {
     background-color: #ededda;
     padding: 3px 0px 3px 20px;
     font-family: 'Muli', sans-serif;
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .subscribe-submit {
-  margin-left: 20px;
-  border: none;
-  background-color: #FFDD00;
-  border-radius: 2px;
-  font-size: 18px;
-  font-family: 'Muli', sans-serif;
-  padding: 0 10px;
-  cursor: pointer;
-
+    margin-left: 20px;
+    border: none;
+    background-color: #FFDD00;
+    border-radius: 2px;
+    font-size: 18px;
+    font-family: 'Muli', sans-serif;
+    padding: 0 10px;
+    cursor: pointer;
 }
 
 .subscribe-input::placeholder {
-  font-family: 'Muli', sans-serif;
-  font-size: 18px;
-  padding-top: 5px;
-  color: #6d7465;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    padding-top: 5px;
+    color: #6d7465;
 }
 
-
 .contact-us-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-us-container>span {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .copyright {
-  margin-top: 100px;
-  text-align:center;
-  color: #ededda;
+    margin-top: 100px;
+    text-align: center;
+    color: #ededda;
 }
 
 .footer-company-title {
-  color:#FFDD00;
+    color: #FFDD00;
+}
+
+.orders-header-container>hr {
+    margin-bottom: 20px;
+    background: #322a31;
+    border: 0;
+    height: 2px;
+}
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.orders-search-container {
+    width: 40%;
+}
+
+.orders-search-container>.search-box {
+    margin: 20px 0;
+    justify-content: flex-end;
+}
+
+.orders-search-container>.search-box>.search-input {
+    line-height: 50px;
+    width: 100%;
+    font-size: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom: 1px solid #322a31;
+    background-color: #ededda;
+    padding-left: 20px;
+}
+
+.orders-search-container>.search-box>.search-input::placeholder {
+    font-size: 20px;
+    content: "Enter ID, recipient or address"
+}
+
+.orders-search-container>.search-box>.search-submit {
+    font-size: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #ededda;
+    border-bottom: 1px solid #322a31;
+}
+
+.order-list-container {
+    margin: 40px 0;
+}
+
+.order-card-container {
+    margin-bottom: 60px;
+    background-color: rgba(255, 255, 255);
+    border-radius: 4px;
+    border: 2px solid #FFDD00;
+}
+
+.order-card>hr{
+    background: #FFDD00;
+    border: 0;
+    height: 2px;
+    width: 80%;
+}
+
+
+.order-card-header {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0 20px 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.order-info-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-recipient-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-info-container>div:first-child, .order-recipient-container>div:first-child {
+    width: 30%;
+}
+.order-info-container>div:nth-child(2), .order-recipient-container>div:nth-child(2) {
+    width: 50%;
+}
+
+.order-info-container>div:nth-child(3), .order-recipient-container>div:nth-child(3) {
+    width: 15%;
+}
+
+.order-card-main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.order-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-list>li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-list>li>span:first-child{
+    width: 30%;
+}
+.order-list>li>span {
+    width: 20%;
+}
+
+.order-list-header {
+    font-weight: 700;
 }
 

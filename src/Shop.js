@@ -16,13 +16,13 @@ class Shop extends Component {
             pageSize: 12,
             currentPage: 1,
             totalPages: Math.ceil(data.beers.length / 12),
-            filters:[],
-            searchInput:"",
+            filters: [],
+            searchInput: "",
         }
         this.onNextClick = this.onNextClick.bind(this);
         this.onPrevClick = this.onPrevClick.bind(this);
         this.onSearchSubmit = this.onSearchSubmit.bind(this);
-        this.onFilterClick=this.onFilterClick.bind(this);
+        this.onFilterClick = this.onFilterClick.bind(this);
     }
 
     onPrevClick() {
@@ -51,14 +51,14 @@ class Shop extends Component {
             }
             return false;
         });
-        let filterList=this.state.filters;
+        let filterList = this.state.filters;
         if (filterList.length > 0) {
-            filteredProductsList = filteredProductsList.filter((product)=> {
-               let result= filterList.indexOf(product.style.toLowerCase());
-               if (result > -1) {
-                   return true;
-               }
-               return false;
+            filteredProductsList = filteredProductsList.filter((product) => {
+                let result = filterList.indexOf(product.style.toLowerCase());
+                if (result > -1) {
+                    return true;
+                }
+                return false;
             })
         }
 
@@ -66,18 +66,19 @@ class Shop extends Component {
             currentPage: 1,
             filteredBeerList: filteredProductsList,
             totalPages: Math.ceil(filteredProductsList.length / this.state.pageSize),
-            searchInput:lowercasedSearchTerm,
+            searchInput: lowercasedSearchTerm,
         })
     }
 
-    onFilterClick (filter) {
-        let activeFilters=this.state.filters;
-        let result=activeFilters.indexOf(filter);
-        if (result>-1) {
-            activeFilters.splice(result,1);
+    onFilterClick(filter) {
+        let activeFilters = this.state.filters;
+        let result = activeFilters.indexOf(filter);
+        if (result > -1) {
+            activeFilters.splice(result, 1);
         } else {
             activeFilters.push(filter);
         }
+        
         let lowercasedSearchTerm = this.state.searchInput;
         let filteredProductsList = this.state.beerList.filter((product) => {
             let lowercasedProductName = product.name.toLowerCase();
@@ -88,17 +89,17 @@ class Shop extends Component {
             return false;
         });
         if (activeFilters.length > 0) {
-            filteredProductsList = filteredProductsList.filter((product)=> {
-               let result= activeFilters.indexOf(product.style.toLowerCase());
-               if (result > -1) {
-                   return true;
-               }
-               return false;
+            filteredProductsList = filteredProductsList.filter((product) => {
+                let result = activeFilters.indexOf(product.style.toLowerCase());
+                if (result > -1) {
+                    return true;
+                }
+                return false;
             })
         }
 
         this.setState({
-            filters:activeFilters,
+            filters: activeFilters,
             currentPage: 1,
             filteredBeerList: filteredProductsList,
             totalPages: Math.ceil(filteredProductsList.length / this.state.pageSize),
@@ -106,19 +107,19 @@ class Shop extends Component {
     }
 
     render() {
-        let pagedProductList = this.state.filteredBeerList.slice((this.state.currentPage - 1) * this.state.pageSize, this.state.currentPage * this.state.pageSize);
-        let paginationOrError = pagedProductList.length > 0 ?
+        const pagedProductList = this.state.filteredBeerList.slice((this.state.currentPage - 1) * this.state.pageSize, this.state.currentPage * this.state.pageSize);
+        const paginationOrError = pagedProductList.length > 0 ?
             <Pagination onPrevClick={this.onPrevClick} onNextClick={this.onNextClick} currentPage={this.state.currentPage} totalPages={this.state.totalPages} />
             : <span>No beers for you!</span>;
-             
+
         return (
             <div className="wrapper">
-                <Header />
+                <Header showSocials={true}/>
                 <main>
-                    <IntroSearchContainer 
-                    searchSubmit={this.onSearchSubmit} 
-                    filterClick={this.onFilterClick}
-                    filterList={this.state.filters}/>
+                    <IntroSearchContainer
+                        searchSubmit={this.onSearchSubmit}
+                        filterClick={this.onFilterClick}
+                        filterList={this.state.filters} />
                     <ProductList products={pagedProductList} />
                     {paginationOrError}
                 </main>

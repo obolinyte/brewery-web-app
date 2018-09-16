@@ -9,7 +9,7 @@ class AcountNav extends Component {
 
                 <ul className="acount-nav">
                     <li><Link className="icon-user" to="#"></Link></li>
-                    <li><Link to="#">my orders</Link></li>
+                    <li><Link to="/MyOrders">my orders</Link></li>
                     <li><Link className="icon-shopping-cart" to="#"></Link></li>
                 </ul>
         );
