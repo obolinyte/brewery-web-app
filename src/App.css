@@ -201,25 +201,31 @@ main {
 }
 
 .beer-filter-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    padding:0;
+}
+
+.beer-filter-dropdown-btn {
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #0f0d0f;
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
 }
 
 .beer-filter-container>li {
     list-style-type: none;
-    margin-right: 30px;
+    margin-bottom: 20px;
     cursor: pointer;
-    text-decoration: underline;
 }
 
 .beer-filter-container>li:hover {
     color: #6d7465;
 }
 
-.beer-filter-active {
+/* .beer-filter-active {
     font-weight: 700;
-}
+} */
 
 .products-list-container {
     margin-top: 80px;

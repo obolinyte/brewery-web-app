@@ -24,10 +24,9 @@ class DropdownMenu extends Component {
             <div className="dropdown-menu">
                 <button onClick={this.toggleMenu} className="dropbtn icon-bars"></button>
                 <ul style={{ display: this.state.showMenu ? "block" : "none" }} className="nav-list">
-                    <li><Link to="/">home</Link></li>
-                    <li><Link to="/Types">beer</Link></li>
-                    <li><Link to="/PartnersList">partners</Link></li>
-                    <li><Link to="/Contact">contact</Link></li>
+                    <li><Link to="/">shop</Link></li>
+                    <li><Link to="#">about</Link></li>
+                    <li><Link to="#">contact us</Link></li>
                 </ul>
             </div>
         </nav>
