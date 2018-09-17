@@ -6,9 +6,9 @@ class LogoContainer extends Component {
         return (
             <div className="logo-container">
                 <div className="logo-img-container">
-                    <img src="./small-beer.svg"></img>
-                    <img src="./beer.svg"></img>
-                    <img src="./big-beer.svg"></img>
+                    <img src="./small-beer.svg" alt="company logo part one"></img>
+                    <img src="./beer.svg" alt="company logo part two"></img>
+                    <img src="./big-beer.svg" alt="company logo part three"></img>
                 </div>
                 <span>js brew</span>
             </div>

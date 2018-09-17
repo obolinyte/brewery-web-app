@@ -8,7 +8,7 @@ class SearchContainer extends Component {
         return (
             <div className="intro-search-container">
             <h1>beer?</h1>
-            <SearchBox searchSubmit={this.props.searchSubmit} placeholder="i.e., jQuery"/>
+            <SearchBox searchSubmit={this.props.searchSubmit} placeholder="i.e., Angular"/>
             <BeerFilter filterClick={this.props.filterClick} filterList={this.props.filterList}/>
             </div>
         );

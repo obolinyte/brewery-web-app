@@ -16,7 +16,7 @@ class Shop extends Component {
             pageSize: 12,
             currentPage: 1,
             totalPages: Math.ceil(data.beers.length / 12),
-            filters: [],
+            filter:"all",
             searchInput: "",
         }
         this.onNextClick = this.onNextClick.bind(this);
@@ -51,11 +51,10 @@ class Shop extends Component {
             }
             return false;
         });
-        let filterList = this.state.filters;
-        if (filterList.length > 0) {
-            filteredProductsList = filteredProductsList.filter((product) => {
-                let result = filterList.indexOf(product.style.toLowerCase());
-                if (result > -1) {
+        let filter=this.state.filter;
+        if (filter!=="all") {
+            filteredProductsList=filteredProductsList.filter((product)=> {
+                if (product.style.toLowerCase() === filter.toLowerCase()) {
                     return true;
                 }
                 return false;
@@ -71,14 +70,6 @@ class Shop extends Component {
     }
 
     onFilterClick(filter) {
-        let activeFilters = this.state.filters;
-        let result = activeFilters.indexOf(filter);
-        if (result > -1) {
-            activeFilters.splice(result, 1);
-        } else {
-            activeFilters.push(filter);
-        }
-        
         let lowercasedSearchTerm = this.state.searchInput;
         let filteredProductsList = this.state.beerList.filter((product) => {
             let lowercasedProductName = product.name.toLowerCase();
@@ -88,10 +79,11 @@ class Shop extends Component {
             }
             return false;
         });
-        if (activeFilters.length > 0) {
-            filteredProductsList = filteredProductsList.filter((product) => {
-                let result = activeFilters.indexOf(product.style.toLowerCase());
-                if (result > -1) {
+      
+
+        if (filter!=="all") {
+            filteredProductsList=filteredProductsList.filter((product)=> {
+                if (product.style.toLowerCase() === filter.toLowerCase()) {
                     return true;
                 }
                 return false;
@@ -99,7 +91,7 @@ class Shop extends Component {
         }
 
         this.setState({
-            filters: activeFilters,
+            filter: filter,
             currentPage: 1,
             filteredBeerList: filteredProductsList,
             totalPages: Math.ceil(filteredProductsList.length / this.state.pageSize),
@@ -119,7 +111,7 @@ class Shop extends Component {
                     <IntroSearchContainer
                         searchSubmit={this.onSearchSubmit}
                         filterClick={this.onFilterClick}
-                        filterList={this.state.filters} />
+                        filter={this.state.filter} />
                     <ProductList products={pagedProductList} />
                     {paginationOrError}
                 </main>

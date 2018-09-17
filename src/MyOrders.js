@@ -65,9 +65,9 @@ class MyOrders extends Component {
         });
 
         let filter=this.state.filter;
-        if (filter!="status") {
+        if (filter!=="status") {
             filteredOrderList=filteredOrderList.filter((item)=> {
-                if (item.status == filter) {
+                if (item.status === filter) {
                     return true;
                 }
                 return false;
@@ -103,9 +103,9 @@ class MyOrders extends Component {
             return false;
         });
 
-        if (filter!="status") {
+        if (filter!=="status") {
             filteredOrderList=filteredOrderList.filter((item)=> {
-                if (item.status == filter) {
+                if (item.status === filter) {
                     return true;
                 }
                 return false;

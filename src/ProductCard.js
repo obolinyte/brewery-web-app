@@ -9,7 +9,7 @@ class ProductCard extends Component {
         return (
             <Link className="product-card-container" to="#">
                 <div className="product-card">
-                    <img className="product-img" src={this.props.productImgSrc}></img>
+                    <img className="product-img" alt={this.props.productTitle} src={this.props.productImgSrc}></img>
                     <div className="product-card-footer">
                         <span className="product-title">{this.props.productTitle}</span>
                         <div className="alc-price-container">

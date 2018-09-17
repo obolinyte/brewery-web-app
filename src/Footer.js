@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import SocialsContainer from './SocialsContainer.js';
 import { Link } from 'react-router-dom';
 
 
