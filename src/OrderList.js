@@ -10,6 +10,7 @@ class OrderList extends Component {
                         return <OrderCard
                         date={order.orderDate}
                         orderId={order.id}
+                        key={order.id}
                         status={order.status} 
                         recipient={order.recipient}
                         address={order.address}

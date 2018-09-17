@@ -21,7 +21,7 @@ handleChange(event) {
         return (
             <div className="order-filter">
                 <select value={this.state.value} onChange={this.handleChange}>
-                    <option value="status">Status</option>
+                    <option value="status">sort by status</option>
                     <option value="pending payment">Pending payment</option>
                     <option value="processing">Processing</option>
                     <option value="shipped">Shipped</option>

@@ -8,12 +8,13 @@ class ProductsList extends Component {
         return (
             <div className="products-list-container">
                 <div className="products-list">
-                    {this.props.products.map((product) => {
+                    {this.props.products.map((product, index) => {
                         return <ProductCard
                         productImgSrc={"./" + product.img}
                         productTitle={product.name}
                         productAlc={product.alcohol}
-                        productPrice={product.price} />
+                        productPrice={product.price} 
+                        key={"product"+index}/>
                     })}
                     
               

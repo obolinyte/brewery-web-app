@@ -65,11 +65,12 @@ class OrderCard extends Component {
                                 <span>Quantity</span>
                                 <span>Total(&euro;)</span>
                             </li>
-                            {this.props.orderItems.map((item) => {
+                            {this.props.orderItems.map((item, index) => {
                         return <OrderItem
                         name={item.beer}
                         price={item.price}
                         quantity={item.qty}
+                        key={this.props.orderId+index}
                         />
                     })}
                         </ul>
