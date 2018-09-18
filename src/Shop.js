@@ -102,7 +102,7 @@ class Shop extends Component {
         const pagedProductList = this.state.filteredBeerList.slice((this.state.currentPage - 1) * this.state.pageSize, this.state.currentPage * this.state.pageSize);
         const paginationOrError = pagedProductList.length > 0 ?
             <Pagination onPrevClick={this.onPrevClick} onNextClick={this.onNextClick} currentPage={this.state.currentPage} totalPages={this.state.totalPages} />
-            : <span>No beers for you!</span>;
+            : <span>No beers found...</span>;
 
         return (
             <div className="wrapper">
