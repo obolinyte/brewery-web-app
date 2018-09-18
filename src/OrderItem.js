@@ -8,7 +8,7 @@ class OrderItem extends Component {
                 <span>{this.props.name}</span>
                 <span>{this.props.price}</span>
                 <span>{this.props.quantity}</span>
-                <span>{(this.props.price*this.props.quantity).toFixed(2)}</span>
+                <span className="order-item-total">{(this.props.price*this.props.quantity).toFixed(2)}</span>
             </li>
         );
     }

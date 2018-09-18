@@ -12,12 +12,12 @@ class BeerFilter extends Component {
         this.onFilterClick = this.onFilterClick.bind(this);
     }
 
-    onFilterClick (filter) {
+    onFilterClick(filter) {
         this.props.filterClick(filter);
 
         this.setState({
-            showDropdown:false,
-            value:filter,
+            showDropdown: false,
+            value: filter,
         })
     }
 
@@ -33,18 +33,18 @@ class BeerFilter extends Component {
     render() {
         return (
 
-            <div className="beer-filter-dropdown-container">
+            <div className="filter-dropdown-container">
                 <span>what's your style?</span>
-                <button onClick={this.toggleDropdown} className="beer-filter-dropdown-btn">{this.state.value} <span className="icon-down-open"></span></button>
-                <ul style={{ display: this.state.showDropdown ? "block" : "none" }} className="beer-filter-container">
-                <li  onClick={() => { this.onFilterClick("all") }}>all</li>
-                    <li  onClick={() => { this.onFilterClick("american lager") }}>american lager</li>
-                    <li  onClick={() => { this.onFilterClick("european lager") }}>european lager</li>
-                    <li  onClick={() => { this.onFilterClick("pilsner") }}>pilsner</li>
+                <button onClick={this.toggleDropdown} className="filter-dropdown-btn">{this.state.value} <span className="icon-down-open"></span></button>
+                <ul style={{ display: this.state.showDropdown ? "block" : "none" }} className="filter-container">
+                    <li onClick={() => { this.onFilterClick("all") }}>all</li>
+                    <li onClick={() => { this.onFilterClick("american lager") }}>american lager</li>
+                    <li onClick={() => { this.onFilterClick("european lager") }}>european lager</li>
+                    <li onClick={() => { this.onFilterClick("pilsner") }}>pilsner</li>
                     <li onClick={() => { this.onFilterClick("indian pale ale") }}>indian pale ale</li>
                     <li onClick={() => { this.onFilterClick("american pale ale") }}>american pale ale</li>
-                    <li  onClick={() => { this.onFilterClick("stout") }}>stout</li>
-                    <li  onClick={() => { this.onFilterClick("porter") }}>porter</li>
+                    <li onClick={() => { this.onFilterClick("stout") }}>stout</li>
+                    <li onClick={() => { this.onFilterClick("porter") }}>porter</li>
                 </ul>
             </div>
         );

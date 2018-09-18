@@ -19,7 +19,7 @@ class MyOrders extends Component {
             currentPage: 1,
             totalPages: Math.ceil(data.orders.length / 5),
             searchInput:"",
-            filter:"status",
+            filter:"all",
         }
         this.onNextClick = this.onNextClick.bind(this);
         this.onPrevClick = this.onPrevClick.bind(this);
@@ -65,7 +65,7 @@ class MyOrders extends Component {
         });
 
         let filter=this.state.filter;
-        if (filter!=="status") {
+        if (filter!=="all") {
             filteredOrderList=filteredOrderList.filter((item)=> {
                 if (item.status === filter) {
                     return true;
@@ -103,7 +103,7 @@ class MyOrders extends Component {
             return false;
         });
 
-        if (filter!=="status") {
+        if (filter!=="all") {
             filteredOrderList=filteredOrderList.filter((item)=> {
                 if (item.status === filter) {
                     return true;
@@ -127,7 +127,7 @@ class MyOrders extends Component {
             <Pagination onPrevClick={this.onPrevClick} onNextClick={this.onNextClick} currentPage={this.state.currentPage} totalPages={this.state.totalPages} />
             : <span>No results found...</span>;
         return (
-            <div className="wrapper">
+            <div className="my-orders-wrapper">
                 <Header showSocials={false} />
                 <main>
                     <MyOrdersHeader searchSubmit={this.onSearchSubmit}/>

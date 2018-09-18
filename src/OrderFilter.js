@@ -2,35 +2,50 @@ import React, { Component } from 'react';
 import './App.css';
 
 class OrderFilter extends Component {
-constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state={
-        value:"status",
-    }
-
-    this.handleChange=this.handleChange.bind(this);
+        this.state = {
+            showDropdown: false,
+            value: "all",
+        }
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.onFilterClick = this.onFilterClick.bind(this);
+    
 }
 
-handleChange(event) {
- this.setState({value:event.target.value});
- this.props.onStatusChange(event.target.value);
+toggleDropdown() {
+    this.setState(
+        {
+            showDropdown: !this.state.showDropdown,
+        }
+    )
 }
 
-    render() {
-        return (
-            <div className="order-filter">
-                <select value={this.state.value} onChange={this.handleChange}>
-                    <option value="status">sort by status</option>
-                    <option value="pending payment">Pending payment</option>
-                    <option value="processing">Processing</option>
-                    <option value="shipped">Shipped</option>
-                    <option value="delivered">Delivered</option>
-                </select>
-                
-            </div>
-        );
-    }
+onFilterClick(filter) {
+    this.props.onStatusChange(filter);
+
+    this.setState({
+        showDropdown: false,
+        value: filter,
+    })
+}
+
+render() {
+    return (
+        <div className="order-filter">
+        <span>sort by status:</span>
+            <button onClick={this.toggleDropdown} className="filter-dropdown-btn">{this.state.value} <span className="icon-down-open"></span></button>
+            <ul style={{ display: this.state.showDropdown ? "flex" : "none" }} className="filter-container">
+                <li onClick={() => { this.onFilterClick("all") }}>all</li>
+                <li onClick={() => { this.onFilterClick("pending payment") }}>pending payment</li>
+                <li onClick={() => { this.onFilterClick("processing") }}>processing</li>
+                <li onClick={() => { this.onFilterClick("shipped") }}>shipped</li>
+                <li onClick={() => { this.onFilterClick("delivered") }}>delivered</li>
+            </ul>
+        </div>
+    );
+}
 }
 
 export default OrderFilter;

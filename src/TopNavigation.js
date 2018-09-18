@@ -23,7 +23,7 @@ class AcountNav extends Component {
     }
 
     updatePredicate() {
-        this.setState({ isDesktop: window.innerWidth > 650 });
+        this.setState({ isDesktop: window.innerWidth > 768 });
     }
     render() {
         const isDesktop = this.state.isDesktop;
