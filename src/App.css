@@ -28,7 +28,6 @@ body {
     border: none;
     outline: none;
     background-color: #322a31;
-    font-family: 'Open Sans', sans-serif;
     font-size: 26px;
     padding: 0;
 }
@@ -609,6 +608,43 @@ footer {
     width: 20%;
 }
 
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+font-size: 20px;
+
+}
+
+.not-yet-implemented {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 60px 0 0px 0;
+}
+.not-yet-implemented>h1 {
+    margin:0;
+    font-size: 26px;
+    font-weight: normal;
+}
+.not-yet-implemented>img {
+    max-width: 70px;
+    padding-bottom: 7px;
+}
+
+.not-found-container>p{
+margin-bottom:60px;
+}
+.not-found-container>p>a{
+    color: black;
+}
+.not-found-container>p>a:hover{
+    color: #6d7465;
+}
 
 @media only screen and (max-width: 1024px) {
     main {

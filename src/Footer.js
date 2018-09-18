@@ -14,9 +14,9 @@ class Footer extends Component {
                     <div className="follow-us-container">
                         <h2>Follow us</h2>
                         <ul className="nav-list">
-                            <li><Link to="#">Facebook</Link></li>
-                            <li><Link to="#">Instagram</Link></li>
-                            <li><Link to="#">Twitter</Link></li>
+                            <li><Link to="/NotFound">Facebook</Link></li>
+                            <li><Link to="/NotFound">Instagram</Link></li>
+                            <li><Link to="/NotFound">Twitter</Link></li>
                         </ul>
                     </div>
                     <div className="subscribe-container">

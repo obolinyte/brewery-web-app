@@ -8,9 +8,9 @@ class AcountNav extends Component {
         return (
 
                 <ul className="acount-nav">
-                    <li><Link className="icon-user" to="#"></Link></li>
+                    <li><Link className="icon-user" to="/NotFound"></Link></li>
                     <li><Link to="/MyOrders">my orders</Link></li>
-                    <li><Link className="icon-shopping-cart" to="#"></Link></li>
+                    <li><Link className="icon-shopping-cart" to="/NotFound"></Link></li>
                 </ul>
         );
     }
