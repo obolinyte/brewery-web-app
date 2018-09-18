@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class ProductCard extends Component {
     render() {
         return (
-            <Link className="product-card-container" to="#">
+            <Link className="product-card-container" to="/NotFound">
                 <div className="product-card">
                     <img className="product-img" alt={this.props.productTitle} src={this.props.productImgSrc}></img>
                     <div className="product-card-footer">
